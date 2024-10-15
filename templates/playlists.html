@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Playlists</title>
+</head>
+<body>
+    <h1>Mis Playlists de Spotify</h1>
+
+    {% if playlists %}
+        <ul>
+            {% for playlist in playlists %}
+                <li>
+                    <a href="{{ playlist.external_urls.spotify }}">{{ playlist.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>
